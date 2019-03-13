@@ -69,7 +69,6 @@
 
                 $('#btn_ar').click(function() {
                     $('#affichage_ar').append('<a-scene class="ui-mobile-viewport" stats embedded arjs="trackingMethod: best;"" style="position: absolute;" id="scene_ar"><a-assets><a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin></a-assets><a-marker preset="hiro"><!-- ELEMENT 3D --><a-entity gltf-model="url(models/test.glb)" scale="10 10 10" animation-mixer="clip: DoStuff;"><a-animation mixin="rotat"></a-animation></a-entity></a-marker><a-entity camera></a-entity></a-scene>');
-                    //$('#ar').load(location.href+#scene_ar>*,);
                 });
 
                 $('#btn_menu').click(function() {
