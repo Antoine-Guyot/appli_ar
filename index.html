@@ -20,36 +20,86 @@
 
     </head>
 
-    <body style="margin: 0; overflow: hidden;" id="app">
+    <body style="margin: 0 !important; overflow: hidden;" id="app">
 
         <!-- ACCUEIL -->
         <div data-role="page" id="accueil" class="page page-contenu">
-            <h1>Menu</h1>
+            <h1>Accueil</h1>
             <a href="#menu" id="btn"><button>Menu</button></a>
         </div>
         <!-- FIN ACCUEIL -->
 
-        <!-- MENU -->
+        <!-- PAGE MENU -->
         <div data-role="page" id="menu" class="page page-contenu">
             <h1>Menu</h1>
-            <a href="#accueil" id="btn_ar"><button>Accueil</button></a>
-            <a href="#" id="test"><button>Oeuvre n°1</button></a>
-            <a href="#"><button>Oeuvre n°2</button></a>
+            <a href="#accueil"><button>Accueil</button></a>
+            <a href="#ar" id="btn_ar"><button>Oeuvre n°1</button></a>
+            <a href="#ar" id="btn_ar1"><button>Oeuvre n°2</button></a>
             <a href="#"><button>Oeuvre n°3</button></a>
             <a href="#"><button>Oeuvre n°4</button></a>
             <a href="#"><button>Oeuvre n°5</button></a>
         </div>
-        <!-- FIN MENU -->
+        <!-- FIN PAGE MENU -->
 
         <!-- AR -->
         <div data-role="page" class="page" id="ar">
-
+    
+            <!-- RETOUR PAGE MENU -->
             <a href="#menu" id="btn_menu"><button class="btn_menu">Menu</button></a>
 
-            <div id="affichage_ar">
-                
-            </div>
+            <!-- EMPLACEMENT CODE RA -->
+            <div id="affichage_ar"></div>
+            <a-scene id="scene" class="ui-mobile-viewport" stats embedded arjs="trackingMethod: best;" style="position: absolute;" id="scene_ar">
+                <a-assets>
+                    <a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin>
+                </a-assets>
+                <a-marker preset="hiro">
+                    <!-- ELEMENT 3D -->
+                    <a-entity gltf-model="url(models/test.glb)" id="test" visible="false" scale="10 10 10" animation-mixer="clip: DoStuff;">
+                        <a-animation mixin="rotat"></a-animation>
+                    </a-entity>
+                    
+                    <!-- ALLANT -->
+                    <a-image src="img/paysage/paysage-1.png" id="imgp1" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-2.png" id="imgp2" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-3.png" id="imgp3" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-4.png" id="imgp4" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-5.png" id="imgp5" visible="true" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-6.png" id="imgp6" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-7.png" id="imgp7" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-8.png" id="imgp8" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-9.png" id="imgp9" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-10.png" id="imgp10" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-11.png" id="imgp11" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-12.png" id="imgp12" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-13.png" id="imgp13" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-14.png" id="imgp14" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-15.png" id="imgp15" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-16.png" id="imgp16" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-17.png" id="imgp17" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-18.png" id="imgp18" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-19.png" id="imgp19" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-20.png" id="imgp20" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-21.png" id="imgp21" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-22.png" id="imgp22" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-23.png" id="imgp23" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-24.png" id="imgp24" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-25.png" id="imgp25" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/paysage/paysage-26.png" id="imgp26" visible="false" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>
+                    <a-image src="img/cadre.png" id="cadre" visible="true" scale="1.5 2" rotation="-90 360 0" position="0 0.08 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-1.png" id="imgm1" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-2.png" id="imgm2" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-3.png" id="imgm3" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-4.png" id="imgm4" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-5.png" id="imgm5" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-6.png" id="imgm6" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-7.png" id="imgm7" visible="true" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-8.png" id="imgm8" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                    <a-image src="img/marcheur/marcheur-9.png" id="imgm9" visible="false" scale="1.5 1.9" position="0 0.16 0" rotation="-90 360 0"></a-image>
+                </a-marker>
+                <a-entity camera></a-entity>
 
+            </a-scene>
 
         </div>
         <!-- FIN AR -->
@@ -74,13 +124,24 @@
 
             $(document).ready(function() {
 
+
+
+                // AJOUT CODE RA
                 $('#btn_ar').click(function() {
-                    $('#affichage_ar').append('<a-scene class="ui-mobile-viewport" stats embedded arjs="trackingMethod: best;"" style="position: absolute;" id="scene_ar"><a-assets><a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin></a-assets><a-marker preset="hiro"><!-- ELEMENT 3D --><a-entity gltf-model="url(models/test.glb)" scale="10 10 10" animation-mixer="clip: DoStuff;"><a-animation mixin="rotat"></a-animation></a-entity></a-marker><a-entity camera></a-entity></a-scene>');
+                    $('#test').attr('visible', 'true');
                 });
 
-                $('#btn_menu').click(function() {
-                    $('#affichage_ar').empty();
+                $('#btn_ar1').click(function() {
+                    $('#test').attr('visible', 'true');
                 });
+
+                // RETOUR MENU - SUPPRESSION CODE RA
+                /*$('#btn_menu').click(function() {
+                    $('#affichage_ar').empty();
+                    $('div').remove('.rs-base');
+                    $('div').remove('#arjsDebugUIContainer');
+                    $('video').remove();
+                });*/
 
             })
 
