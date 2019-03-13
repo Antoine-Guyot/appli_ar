@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Appli</title>
+
+        <!-- jQuery / jQuery Mobile -->
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+        <!-- SCRIPTS RA -->
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    </head>
+
+    <body style="margin: 0; overflow: hidden;" id="app">
+
+        <!-- ACCUEIL -->
+        <div data-role="page" id="menu" class="page page-contenu">
+            <h1>Menu</h1>
+            <a href="#ar"><button>Réalité augmentée</button></a>
+            <a href="#"><button>Oeuvre n°1</button></a>
+            <a href="#"><button>Oeuvre n°2</button></a>
+            <a href="#"><button>Oeuvre n°3</button></a>
+            <a href="#"><button>Oeuvre n°4</button></a>
+            <a href="#"><button>Oeuvre n°5</button></a>
+        </div>
+        <!-- FIN ACCUEIL -->
+
+        <!-- AR -->
+        <div data-role="page" class="page" id="ar">
+
+            <a href="#menu"><button class="btn_menu">Menu</button></a>
+
+            <a-scene class="ui-mobile-viewport" stats embedded arjs='trackingMethod: best;' style="position: absolute;">
+
+                <a-assets>
+                    <a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin>
+                </a-assets>
+
+                <a-marker preset='hiro'>
+                    <!-- ELEMENT 3D -->
+                    <!-- GLTF -->
+                    <a-entity gltf-model="url(models/test.glb)" scale="10 10 10" animation-mixer="clip: DoStuff;">
+                        <a-animation mixin="rotat"></a-animation>
+                    </a-entity>
+
+                    <!--<a-image src="images/coin.jpg" visible="true" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>-->
+
+                </a-marker>
+
+              <a-entity camera></a-entity>
+
+            </a-scene>
+
+        </div>
+        <!-- FIN AR -->
+
+    	<!-- SCRIPTS -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            //app.initialize();
+
+            /* VISUALISATION CAMERA */
+            /*let options = {
+                x:0,
+                y:0,
+                width: window.screen.width, //largeur
+                height: window.screen.height, //hauteur
+                camera: CameraPreview.CAMERA_DIRECTION.BACK, //choix de la caméra FRONT/BACK
+                toBack: false, //true -> html devant la visualisation
+                tapPhoto: false,
+                tapFocus: false, //permet à l'utilisateur de régler le focus en touchant l'écran
+                previewDrag: false
+            };*/
+
+        </script>
+        <!-- FIN SCRIPTS -->
+
+    </body>
+</html>
