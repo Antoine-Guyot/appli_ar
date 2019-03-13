@@ -25,8 +25,8 @@
         <!-- ACCUEIL -->
         <div data-role="page" id="menu" class="page page-contenu">
             <h1>Menu</h1>
-            <a href="#ar"><button>Réalité augmentée</button></a>
-            <a href="#"><button>Oeuvre n°1</button></a>
+            <a href="#ar" id="btn_ar"><button>Réalité augmentée</button></a>
+            <a href="#" id="test"><button>Oeuvre n°1</button></a>
             <a href="#"><button>Oeuvre n°2</button></a>
             <a href="#"><button>Oeuvre n°3</button></a>
             <a href="#"><button>Oeuvre n°4</button></a>
@@ -37,28 +37,12 @@
         <!-- AR -->
         <div data-role="page" class="page" id="ar">
 
-            <a href="#menu"><button class="btn_menu">Menu</button></a>
+            <a href="#menu" id="btn_menu"><button class="btn_menu">Menu</button></a>
 
-            <a-scene class="ui-mobile-viewport" stats embedded arjs='trackingMethod: best;' style="position: absolute;">
+            <div id="affichage_ar">
+                
+            </div>
 
-                <a-assets>
-                    <a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin>
-                </a-assets>
-
-                <a-marker preset='hiro'>
-                    <!-- ELEMENT 3D -->
-                    <!-- GLTF -->
-                    <a-entity gltf-model="url(models/test.glb)" scale="10 10 10" animation-mixer="clip: DoStuff;">
-                        <a-animation mixin="rotat"></a-animation>
-                    </a-entity>
-
-                    <!--<a-image src="images/coin.jpg" visible="true" scale="1.5 2" rotation="-90 360 0" position="0 0 -0.03"></a-image>-->
-
-                </a-marker>
-
-              <a-entity camera></a-entity>
-
-            </a-scene>
 
         </div>
         <!-- FIN AR -->
@@ -80,6 +64,19 @@
                 tapFocus: false, //permet à l'utilisateur de régler le focus en touchant l'écran
                 previewDrag: false
             };*/
+
+            $(document).ready(function() {
+
+                $('#btn_ar').click(function() {
+                    $('#affichage_ar').append('<a-scene class="ui-mobile-viewport" stats embedded arjs="trackingMethod: best;"" style="position: absolute;" id="scene_ar"><a-assets><a-mixin id="rotat" attribute="rotation" to="0 360 0" repeat="indefinite" dur="7000"></a-mixin></a-assets><a-marker preset="hiro"><!-- ELEMENT 3D --><a-entity gltf-model="url(models/test.glb)" scale="10 10 10" animation-mixer="clip: DoStuff;"><a-animation mixin="rotat"></a-animation></a-entity></a-marker><a-entity camera></a-entity></a-scene>');
+                    //$('#ar').load(location.href+#scene_ar>*,);
+                });
+
+                $('#btn_menu').click(function() {
+                    $('#affichage_ar').empty();
+                });
+
+            })
 
         </script>
         <!-- FIN SCRIPTS -->
